@@ -60,8 +60,8 @@ resource "aws_security_group" "imaximov-a_SG_TF" {
 }
 
 resource "aws_instance" "kubespray_training1" {
-  ami           = "${var.ami_id}"
-  instance_type = "${var.instance_type}"
+  ami           = "${var.debian_ami_id}"
+  instance_type = "${var.debian_instance_type}"
   key_name = "${var.key_name}"
   subnet_id = "${var.subnet_id}"
 
@@ -77,8 +77,8 @@ resource "aws_instance" "kubespray_training1" {
 }
 
 resource "aws_instance" "kubespray_training2" {
-  ami           = "${var.ami_id}"
-  instance_type = "${var.instance_type}"
+  ami           = "${var.debian_ami_id}"
+  instance_type = "${var.debian_instance_type}"
   key_name = "${var.key_name}"
   subnet_id = "${var.subnet_id}"
 
@@ -94,8 +94,8 @@ resource "aws_instance" "kubespray_training2" {
 }
 
 resource "aws_instance" "kubespray_training3" {
-  ami           = "${var.ami_id}"
-  instance_type = "${var.instance_type}"
+  ami           = "${var.debian_ami_id}"
+  instance_type = "${var.debian_instance_type}"
   key_name = "${var.key_name}"
   subnet_id = "${var.subnet_id}"
 
@@ -107,6 +107,20 @@ resource "aws_instance" "kubespray_training3" {
 
   tags = {
       Name = "kubespray_training3"
+  }
+
+}
+
+resource "aws_instance" "win_server_training" {
+  ami           = "${var.windows_ami_id}"
+  instance_type = "${var.windows_instance_type}"
+  key_name = "${var.key_name}"
+  subnet_id = "${var.subnet_id}"
+
+  vpc_security_group_ids = [aws_security_group.imaximov-a_SG_TF.id]
+
+  tags = {
+      Name = "win_server_training"
   }
 
 }

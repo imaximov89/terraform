@@ -4,16 +4,28 @@ variable "aws_region" {
   default = "us-east-1"
 }
 
-variable "ami_id" {
+variable "debian_ami_id" {
   type = string
   description = "ID of the AMI to provision."
   default = "ami-07d02ee1eeb0c996c"
 }
 
-variable "instance_type" {
+variable "windows_ami_id" {
   type = string
-  description = "Type of EC2 instance to provision."
+  description = "ID of the AMI to provision."
+  default = "ami-0193dcf9aa4f5654e"
+}
+
+variable "debian_instance_type" {
+  type = string
+  description = "Type of Debian EC2 instance to provision."
   default = "t2.medium"
+}
+
+variable "windows_instance_type" {
+  type = string
+  description = "Type of Windows EC2 instance to provision."
+  default = "t2.micro"
 }
 
 variable "key_name" {

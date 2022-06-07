@@ -25,3 +25,12 @@ output "kubespray3_public_dns" {
 output "kubespray3_private_ip" {
   value = "${aws_instance.kubespray_training3.private_ip}"
 }
+
+output "win_server_private_ip" {
+  value = "${aws_instance.win_server_training.private_ip}"
+}
+
+output "win_server_public_dns" {
+  value = "${aws_instance.win_server_training.public_dns}"
+}
+
