@@ -34,6 +34,4 @@ override.tf.json
 terraform.rc
 
 # Compiled files
-*.tfstate
-*.tfstate.backup
 *.tfstate.lock.info
