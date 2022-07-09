@@ -41,3 +41,11 @@ output "docker_private_ip" {
 output "docker_public_dns" {
   value = "${aws_instance.docker_training.public_dns}"
 }
+
+output "debian_private_ip" {
+  value = "${aws_instance.debian_training.private_ip}"
+}
+
+output "debian_public_dns" {
+  value = "${aws_instance.debian_training.public_dns}"
+}
