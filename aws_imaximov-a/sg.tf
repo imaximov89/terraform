@@ -23,7 +23,7 @@ resource "aws_security_group" "imaximov-a_SG_TF" {
     from_port        = 22
     to_port          = 22
     protocol         = "tcp"
-    cidr_blocks      = ["212.58.120.68/32"]
+    cidr_blocks      = ["212.58.120.68/32", "212.58.120.65/32"]
   }
 
   ingress {
@@ -31,7 +31,7 @@ resource "aws_security_group" "imaximov-a_SG_TF" {
     from_port        = 3389
     to_port          = 3389
     protocol         = "tcp"
-    cidr_blocks      = ["212.58.120.68/32"]
+    cidr_blocks      = ["212.58.120.68/32", "212.58.120.65/32"]
   }
 
   ingress {
